@@ -7,6 +7,8 @@ RUN yum -y clean all
 RUN useradd -m cloudpack
 RUN echo cloudpack:cloudpack | chpasswd
 
+RUN echo "cloudpack ALL=NOPASSWD: docker" >> /etc/sudoers
+
 RUN su -c "git clone https://github.com/cloudpack-docker/docker.git /home/cloudpack/docker" cloudpack
 RUN su -c "git clone https://github.com/cloudpack-docker/nginx.git /home/cloudpack/nginx" cloudpack
 
