@@ -23,6 +23,6 @@ RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 RUN echo "[program:sshd]" > /etc/supervisord.d/sshd.ini
 RUN echo "command=/usr/sbin/sshd -D" >> /etc/supervisord.d/sshd.ini
 
-CMD ["/usr/bin/supervisord -n"]
+CMD ["/usr/bin/supervisord", "-n"]
 
 EXPOSE 22
