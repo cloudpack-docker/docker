@@ -15,6 +15,7 @@ RUN su -c "git clone https://github.com/cloudpack-docker/docker.git /home/cloudp
 RUN su -c "git clone https://github.com/cloudpack-docker/nginx.git /home/cloudpack/nginx" cloudpack
 
 RUN sshd-keygen
+RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 
 CMD ["/usr/sbin/sshd", "-D"]
 
