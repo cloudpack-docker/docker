@@ -1,0 +1,9 @@
+machine:
+    services:
+        - docker
+dependencies:
+    override:
+        - docker build -t cloudpack/docker .
+test:
+    override:
+        - docker run -d -p 22:22 cloudpack/docker
