@@ -6,4 +6,4 @@ dependencies:
         - docker build -t cloudpack/docker .
 test:
     override:
-        - docker run -d -p 22:22 cloudpack/docker
+        - docker run -d -p 10022:22 cloudpack/docker
