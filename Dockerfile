@@ -10,6 +10,9 @@ RUN yum -y clean all
 RUN useradd -m cloudpack
 RUN echo cloudpack:cloudpack | chpasswd
 
-CMD ["sshd", "-D"]
+RUN su -c "git clone https://github.com/cloudpack-docker/docker.git /home/cloudpack/docker" cloudpack
+RUN su -c "git clone https://github.com/cloudpack-docker/nginx.git /home/cloudpack/nginx" cloudpack
+
+CMD ["/usr/sbin/sshd", "-D"]
 
 EXPOSE 22
