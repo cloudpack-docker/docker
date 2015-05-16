@@ -19,5 +19,4 @@ RUN sshd-keygen
 RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
 
 CMD ["/usr/sbin/sshd", "-D"]
-
 EXPOSE 22
