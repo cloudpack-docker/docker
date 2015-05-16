@@ -12,6 +12,7 @@ RUN echo "cloudpack ALL=NOPASSWD: /usr/bin/docker" >> /etc/sudoers
 RUN su -c "git clone https://github.com/cloudpack-docker/docker.git /home/cloudpack/docker" cloudpack
 RUN su -c "git clone https://github.com/cloudpack-docker/nginx.git /home/cloudpack/nginx" cloudpack
 RUN su -c "git clone https://github.com/cloudpack-docker/memcached.git /home/cloudpack/memcached" cloudpack
+RUN su -c "git clone https://github.com/cloudpack-docker/php-fpm.git /home/cloudpack/php-fpm" cloudpack
 
 RUN sshd-keygen
 RUN sed -ri 's/UsePAM yes/UsePAM no/g' /etc/ssh/sshd_config
