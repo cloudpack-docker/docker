@@ -1,7 +1,7 @@
 FROM centos:centos7
 
 RUN yum -y update
-RUN yum -y install docker git vim initscripts passwd openssh-server sudo
+RUN yum -y install docker git vim initscripts passwd openssh-server sudo bash-completion
 RUN yum -y clean all
 
 RUN useradd -m cloudpack
