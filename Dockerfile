@@ -12,3 +12,10 @@ RUN git clone https://github.com/cloudpack-docker/rundeck.git /root/cloudpack/ru
 RUN git clone https://github.com/cloudpack-docker/nginx.git /root/cloudpack/nginx
 RUN git clone https://github.com/cloudpack-docker/php-fpm.git /root/cloudpack/php-fpm
 RUN git clone https://github.com/cloudpack-docker/memcached.git /root/cloudpack/memcached
+
+RUN echo >> /root/.bash_profile
+RUN echo 'for REPOSITORY in $(ls /root/cloudpack); do' >> /root/.bash_profile
+RUN echo '    echo -n "cloudpack/$REPOSITORY: "' >> /root/.bash_profile
+RUN echo '    git --work-tree=/root/cloudpack/$REPOSITORY --git-dir=/root/cloudpack/$REPOSITORY/.git pull' >> /root/.bash_profile
+RUN echo 'done' >> /root/.bash_profile
+
