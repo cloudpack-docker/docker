@@ -11,6 +11,7 @@ RUN git clone https://github.com/cloudpack-docker/docker.git /root/cloudpack/doc
 RUN git clone https://github.com/cloudpack-docker/rundeck.git /root/cloudpack/rundeck
 RUN git clone https://github.com/cloudpack-docker/nginx.git /root/cloudpack/nginx
 RUN git clone https://github.com/cloudpack-docker/php-fpm.git /root/cloudpack/php-fpm
+RUN git clone https://github.com/cloudpack-docker/mysql.git /root/cloudpack/mysql
 RUN git clone https://github.com/cloudpack-docker/memcached.git /root/cloudpack/memcached
 
 RUN echo >> /root/.bash_profile
